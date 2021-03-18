@@ -61,11 +61,17 @@ You will need to install the following locally:
 ## Monthly Cost Analysis
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
-| Azure Resource | Service Tier | Monthly Cost |
-| ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| Azure Resource              | Service Tier          | Monthly Cost |
+| ------------ | ------------ | ------------          |
+| *Azure Postgres Database*   |Basic,1 vCore(s),50 GB |      30.00   |
+| *Azure Service Bus*         |     Basic             |      0.05    |
+| Function App                |    Consumption        |     0.00     |
+| App Service                 |    Free Tier          |     0.00     |
+| Storage Account             | Storage (v1)          |     5.00     |
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+   Azure App service is a platform as a service where we can deploy our code without worrying about the infrasturcture. The Front end application is very small and needs python as run time which can be easily deployed as app service.
+
+   Sending notification emails to all the receipents could be a time taking task. Implementatiopn of Service Bus Queue Trigger Function sends the email in background and on refresh user can see the status. 
+
+   The architechture is very cost effective as we don't have to maintain a VM for our application. The function app is running on consumption plan, so we pay only for the time the function app is running.

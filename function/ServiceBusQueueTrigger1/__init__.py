@@ -22,7 +22,7 @@ def main(msg: func.ServiceBusMessage):
     conn_string = "host={0} user={1} dbname={2} password={3} sslmode={4}".format(host, user, dbname, password, sslmode)
     conn = psycopg2.connect(conn_string)
     logging.info('after connetion:')
-    cursor = connection.cursor()
+    cursor = conn.cursor()
 
     try:
         # TODO: Get notification message and subject from database using the notification_id
@@ -46,9 +46,9 @@ def main(msg: func.ServiceBusMessage):
         logging.error(error)
     finally:
         # TODO: Close connection
-        connection.commit()
+        conn.commit()
         cursor.close()
-        connection.close()
+        conn.close()
         logging.info("Connection Closed")
 
 
