@@ -63,11 +63,11 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 | Azure Resource              | Service Tier          | Monthly Cost |
 | ------------ | ------------ | ------------          |
-| *Azure Postgres Database*   |Basic,1 vCore(s),50 GB |      30.00   |
-| *Azure Service Bus*         |     Basic             |      0.05    |
-| Function App                |    Consumption        |     0.00     |
-| App Service                 |    Free Tier          |     0.00     |
-| Storage Account             | Storage (v1)          |     5.00     |
+| *Azure Postgres Database*   |Basic,1 vCore(s),50 GB |      30.00$   |
+| *Azure Service Bus*         |     Basic             |      0.05$    |
+| Function App                |    Consumption        |     0.00$     |
+| App Service                 |    Free Tier          |     0.00$     |
+| Storage Account             | Storage (v1)          |     5.00$     |
 
 ## Architecture Explanation
    Azure App service is a platform as a service where we can deploy our code without worrying about the infrasturcture. The Front end application is very small and needs python as run time which can be easily deployed as app service.
